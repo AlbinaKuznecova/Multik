@@ -45,6 +45,9 @@
  void SurprisedHedgehogLeft ();
  void SurprisedHedgehogRight ();
 
+ void TextRightHedgehog ();
+ void TextLeftHedgehog ();
+
 //----------------------------------------------------------------------------
 
  int main()
@@ -64,6 +67,7 @@
     Cabbagegrowtwo ();
     Cabbagegrowthree ();
     CabbagegrowRight ();
+    txSleep (200);
     DrawCarrot  (200, 820, -3,   1.5);
     DrawCarrot  (200, 780,  0.3, 0.3);
     DrawCarrot  (400, 800,  2,   2  );
@@ -74,6 +78,9 @@
     txSleep (2000);
     txBegin();
     SurprisedHedgehogRight ();
+    TextRightHedgehog  ();
+    txSleep (2000);
+    TextLeftHedgehog ();
     txSleep (2000);
     txEnd();
     EndTitles ();
@@ -83,13 +90,38 @@
 
 //----------------------------------------------------------------------------
 
+void TextRightHedgehog ()
+    {
+    txSetColor (TX_YELLOW);
+    txSetTextAlign (TA_CENTER);
+    txSelectFont ("Comic Sans MS", 40);
+    txTextOut (750, 550, "This is the harvest!");
+    txSetTextAlign();
+    txSleep (1000);
+    }
+
+//----------------------------------------------------------------------------
+
+void TextLeftHedgehog ()
+    {
+    txSetColor (TX_YELLOW);
+    txSetTextAlign (TA_CENTER);
+    txSelectFont ("Comic Sans MS", 40);
+    txTextOut (550, 450, "Yeeeessss!");
+    txSetTextAlign();
+    txSleep (1000);
+    }
+
+
+//----------------------------------------------------------------------------
+
 void SurprisedHedgehogLeft ()
     {
     int    t  = 1;
     while (t <= 2)
     {
     DrawHedgehog( 400, 600, TX_PINK,     TX_BLUE,  TX_MAGENTA,  TX_RED,   TX_BLACK,
-                            TX_BROWN,      t,  0,   t*5);
+                            TX_BROWN,      t, t + 20,   t * 5);
     txSleep (20);
     t++;
     }
@@ -103,7 +135,7 @@ void SurprisedHedgehogRight ()
     while (t <= 4)
     {
     DrawHedgehog( 850, 700, TX_LIGHTGRAY,TX_BLACK, TX_LIGHTRED, TX_PINK,  TX_CYAN,
-               TX_LIGHTGREEN, t, 15,  t*8);
+               TX_LIGHTGREEN, t, t - 5,  t * 8);
     txSleep (20);
     t++;
     }
