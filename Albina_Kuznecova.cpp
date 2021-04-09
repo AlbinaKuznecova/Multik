@@ -71,11 +71,42 @@
     DrawCarrot  (700, 800, -1,   2.3);
     CarrotgrowpreRight ();
     SurprisedHedgehogLeft ();
-    //SurprisedHedgehogLeft ();
-
+    txSleep (2000);
+    txBegin();
+    SurprisedHedgehogRight ();
+    txSleep (2000);
+    txEnd();
     EndTitles ();
     txEnd();
     return 0;
+    }
+
+//----------------------------------------------------------------------------
+
+void SurprisedHedgehogLeft ()
+    {
+    int    t  = 1;
+    while (t <= 2)
+    {
+    DrawHedgehog( 400, 600, TX_PINK,     TX_BLUE,  TX_MAGENTA,  TX_RED,   TX_BLACK,
+                            TX_BROWN,      t,  0,   t*5);
+    txSleep (20);
+    t++;
+    }
+    }
+
+//----------------------------------------------------------------------------
+
+void SurprisedHedgehogRight ()
+    {
+    int    t  = 2;
+    while (t <= 4)
+    {
+    DrawHedgehog( 850, 700, TX_LIGHTGRAY,TX_BLACK, TX_LIGHTRED, TX_PINK,  TX_CYAN,
+               TX_LIGHTGREEN, t, 15,  t*8);
+    txSleep (20);
+    t++;
+    }
     }
 
 //----------------------------------------------------------------------------
