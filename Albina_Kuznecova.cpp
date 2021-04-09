@@ -28,7 +28,7 @@
  void Cabbagegrowone ();
  void Cabbagegrowtwo ();
  void Cabbagegrowthree ();
- void Cabbagegrfour ();
+ void Cabbagegrowfour ();
 
 //----------------------------------------------------------------------------
 
@@ -37,22 +37,18 @@
     txCreateWindow(1500,  1000);
     txBegin();
     //StartTitles();
-    //FlyBirdGreenWings ();
-    //SunSmile();
+    FlyBirdGreenWings ();
+    SunSmile();
     //FlyBirdMagentaWings ();
     //SunSmile();
     //FlyBirdPinkWings ();
     //SunSmile();
     //FlyBirdGrayWings ();
     //SunSmile();
-    Cabbagegrowone ();
+    //Cabbagegrowone ();
     //Cabbagegrowtwo ();
     //Cabbagegrowthree ();
-    //Cabbagegrfour ();
-
-    DrawCabbage ( 500, 800, 0.5, TX_LIGHTGREEN  );
-    DrawCabbage ( 650, 800, 1,   TX_LIGHTCYAN   );
-    DrawCabbage (1100, 820, 2,   TX_LIGHTMAGENTA);
+    //Cabbagegrowfour ();
 
     DrawCarrot  (200, 820, -3,   1.5);
     DrawCarrot  (200, 780,  0.3, 0.3);
@@ -64,6 +60,7 @@
     txEnd();
     return 0;
     }
+
 //----------------------------------------------------------------------------
 
 void Cabbagegrowone ()
@@ -71,12 +68,50 @@ void Cabbagegrowone ()
     int    t  = 0;
     while (t <= 20)
     {
-    DrawCabbage ( 300, 820, t % 4, TX_BROWN);
+    DrawCabbage (300, 820, 1 * t%3, TX_BROWN);
     txSleep (20);
     t++;
     }
     }
 
+//----------------------------------------------------------------------------
+
+void Cabbagegrowtwo ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCabbage (500, 800, t%4, TX_LIGHTGREEN);
+    txSleep (20);
+    t++;
+    }
+    }
+
+//----------------------------------------------------------------------------
+
+    void Cabbagegrowthree ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCabbage (650, 800, 1 * t%3,   TX_LIGHTCYAN   );
+    txSleep (20);
+    t++;
+    }
+    }
+
+//----------------------------------------------------------------------------
+
+    void Cabbagegrowfour ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCabbage (1100, 820, 2 * t%3,   TX_LIGHTMAGENTA);
+    txSleep (20);
+    t++;
+    }
+    }
 //----------------------------------------------------------------------------
 
 void SunSmile ()
