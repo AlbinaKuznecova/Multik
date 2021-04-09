@@ -15,20 +15,32 @@
                   COLORREF beakColor, double legs);
  void DrawBirdLeft (int x, int y, COLORREF bodyColor, COLORREF eyesColor, COLORREF wingsColor,
                   COLORREF beakColor, double legs);
+
  void FlyBirdGreenWings ();
  void FlyBirdMagentaWings ();
  void FlyBirdPinkWings ();
  void FlyBirdGrayWings ();
+
  void DrawCabbage (int x, int y, double sizeR, COLORREF cabbageColor);
  void DrawCarrot  (int x, int y, double sizeX, double sizeY);
+
  void DrawBackground();
+
  void StartTitles ();
  void EndTitles ();
+
  void SunSmile ();
+
  void CabbagegrowLeft ();
  void Cabbagegrowtwo ();
  void Cabbagegrowthree ();
  void CabbagegrowRight ();
+
+ void CarrotgrowLeft ();
+ void CarrotgrowpastLeft ();
+ void CarrotgrowCenter ();
+ void CarrotgrowpreRight ();
+ void CarrotgrowRight ();
 
 //----------------------------------------------------------------------------
 
@@ -51,20 +63,86 @@
     CabbagegrowRight ();
 
     CarrotgrowLeft ();
-    //CarrotgrowpastLeft ();
-    //CarrotgrowCenter ();
-    //CarrotgrowPreRight ();
-    //CarrotgrowRight ();
+    CarrotgrowpastLeft ();
+    CarrotgrowCenter ();
+    CarrotgrowpreRight ();
+    CarrotgrowRight ();
 
-    DrawCarrot  (200, 820, -3,   1.5);
-    DrawCarrot  (200, 780,  0.3, 0.3);
-    DrawCarrot  (400, 800,  2,   2  );
-    DrawCarrot  (500, 680,  0.5,-1  );
-    DrawCarrot  (700, 800, -1,   2.3);
+    //DrawCarrot  (200, 820, -3,   1.5);
+    //DrawCarrot  (200, 780,  0.3, 0.3);
+    //DrawCarrot  (400, 800,  2,   2  );
+    //DrawCarrot  (500, 680,  0.5,-1  );
+    //DrawCarrot  (700, 800, -1,   2.3);
 
     EndTitles ();
     txEnd();
     return 0;
+    }
+
+//----------------------------------------------------------------------------
+
+void CarrotgrowLeft ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCarrot  (200, 820, -3,   1.5);
+
+    txSleep (20);
+    t++;
+    }
+    }
+//----------------------------------------------------------------------------
+
+void CarrotgrowpastLeft ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCarrot  (200, 780,  0.3, 0.3);
+
+    txSleep (20);
+    t++;
+    }
+    }
+//----------------------------------------------------------------------------
+
+void CarrotgrowCenter ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCarrot  (400, 800,  2,   2  );
+
+    txSleep (20);
+    t++;
+    }
+    }
+//----------------------------------------------------------------------------
+
+void CarrotgrowpreRight ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCarrot  (500, 680,  0.5,-1  );
+
+    txSleep (20);
+    t++;
+    }
+    }
+//----------------------------------------------------------------------------
+
+void CarrotgrowRight ()
+    {
+    int    t  = 0;
+    while (t <= 20)
+    {
+    DrawCarrot  (700, 800, -1,   2.3);
+
+    txSleep (20);
+    t++;
+    }
     }
 
 //----------------------------------------------------------------------------
