@@ -25,10 +25,10 @@
  void StartTitles ();
  void EndTitles ();
  void SunSmile ();
- void Cabbagegrowone ();
+ void CabbagegrowLeft ();
  void Cabbagegrowtwo ();
  void Cabbagegrowthree ();
- void Cabbagegrowfour ();
+ void CabbagegrowRight ();
 
 //----------------------------------------------------------------------------
 
@@ -36,19 +36,25 @@
     {
     txCreateWindow(1500,  1000);
     txBegin();
-    //StartTitles();
+    StartTitles();
     FlyBirdGreenWings ();
     SunSmile();
-    //FlyBirdMagentaWings ();
-    //SunSmile();
-    //FlyBirdPinkWings ();
-    //SunSmile();
-    //FlyBirdGrayWings ();
-    //SunSmile();
-    //Cabbagegrowone ();
-    //Cabbagegrowtwo ();
-    //Cabbagegrowthree ();
-    //Cabbagegrowfour ();
+    FlyBirdMagentaWings ();
+    SunSmile();
+    FlyBirdPinkWings ();
+    SunSmile();
+    FlyBirdGrayWings ();
+    SunSmile();
+    CabbagegrowLeft ();
+    Cabbagegrowtwo ();
+    Cabbagegrowthree ();
+    CabbagegrowRight ();
+
+    CarrotgrowLeft ();
+    //CarrotgrowpastLeft ();
+    //CarrotgrowCenter ();
+    //CarrotgrowPreRight ();
+    //CarrotgrowRight ();
 
     DrawCarrot  (200, 820, -3,   1.5);
     DrawCarrot  (200, 780,  0.3, 0.3);
@@ -63,7 +69,7 @@
 
 //----------------------------------------------------------------------------
 
-void Cabbagegrowone ()
+void CabbagegrowLeft ()
     {
     int    t  = 0;
     while (t <= 20)
@@ -102,7 +108,7 @@ void Cabbagegrowtwo ()
 
 //----------------------------------------------------------------------------
 
-    void Cabbagegrowfour ()
+    void CabbagegrowRight ()
     {
     int    t  = 0;
     while (t <= 20)
