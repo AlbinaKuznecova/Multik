@@ -42,6 +42,9 @@
  void CarrotgrowpreRight ();
  void CarrotgrowRight ();
 
+ void SurprisedHedgehogLeft ();
+ void SurprisedHedgehogRight ();
+
 //----------------------------------------------------------------------------
 
  int main()
@@ -61,18 +64,14 @@
     Cabbagegrowtwo ();
     Cabbagegrowthree ();
     CabbagegrowRight ();
-
-    CarrotgrowLeft ();
-    CarrotgrowpastLeft ();
-    CarrotgrowCenter ();
+    DrawCarrot  (200, 820, -3,   1.5);
+    DrawCarrot  (200, 780,  0.3, 0.3);
+    DrawCarrot  (400, 800,  2,   2  );
+    DrawCarrot  (500, 680,  0.5,-1  );
+    DrawCarrot  (700, 800, -1,   2.3);
     CarrotgrowpreRight ();
-    CarrotgrowRight ();
-
-    //DrawCarrot  (200, 820, -3,   1.5);
-    //DrawCarrot  (200, 780,  0.3, 0.3);
-    //DrawCarrot  (400, 800,  2,   2  );
-    //DrawCarrot  (500, 680,  0.5,-1  );
-    //DrawCarrot  (700, 800, -1,   2.3);
+    SurprisedHedgehogLeft ();
+    //SurprisedHedgehogLeft ();
 
     EndTitles ();
     txEnd();
@@ -81,68 +80,18 @@
 
 //----------------------------------------------------------------------------
 
-void CarrotgrowLeft ()
-    {
-    int    t  = 0;
-    while (t <= 20)
-    {
-    DrawCarrot  (200, 820, -3,   1.5);
-
-    txSleep (20);
-    t++;
-    }
-    }
-//----------------------------------------------------------------------------
-
-void CarrotgrowpastLeft ()
-    {
-    int    t  = 0;
-    while (t <= 20)
-    {
-    DrawCarrot  (200, 780,  0.3, 0.3);
-
-    txSleep (20);
-    t++;
-    }
-    }
-//----------------------------------------------------------------------------
-
-void CarrotgrowCenter ()
-    {
-    int    t  = 0;
-    while (t <= 20)
-    {
-    DrawCarrot  (400, 800,  2,   2  );
-
-    txSleep (20);
-    t++;
-    }
-    }
-//----------------------------------------------------------------------------
-
 void CarrotgrowpreRight ()
     {
+    txBegin();
     int    t  = 0;
     while (t <= 20)
     {
-    DrawCarrot  (500, 680,  0.5,-1  );
+    DrawCarrot  (500, 680,  0.5, -1);
 
     txSleep (20);
     t++;
     }
-    }
-//----------------------------------------------------------------------------
-
-void CarrotgrowRight ()
-    {
-    int    t  = 0;
-    while (t <= 20)
-    {
-    DrawCarrot  (700, 800, -1,   2.3);
-
-    txSleep (20);
-    t++;
-    }
+    txEnd();
     }
 
 //----------------------------------------------------------------------------
@@ -570,7 +519,7 @@ void StartTitles()
     txTextOut (750, 450, "farm");
     txTextOut (750, 550, "by Albina Kuznecova");
     txSetTextAlign();
-    txSleep (2000);
+    txSleep (1000);
     }
 
  //----------------------------------------------------------------------------
